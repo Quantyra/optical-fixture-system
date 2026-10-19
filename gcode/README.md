@@ -4,11 +4,13 @@ Three files retain their original filenames and bytes. [manifest.json](manifest.
 
 | Filename stem | Candidate mesh | Outer-wall centerline span X x Y / final wall Z (mm) |
 | --- | --- | --- |
-| source_stand_direct_wall_base_grooves | source_stand_32mm.stl | 31.578 x 27.578 / 25 |
+| source_stand_34mm_edge_alignment#1 | source_stand_34mm.stl | 33.578 x 27.578 / 25 |
 | detector_cradle | detector_cradle.stl | 49.578 x 31.578 / 14 |
 | ambient_cover_110mm_roof_down | ambient_cover_110mm_roof_down.stl | 93.578 x 93.578 / 112 |
 
-These are extruding `WALL-OUTER` paths after layer markers, excluding purge, brim and travel. With roughly 0.4 mm outer lines, they are consistent with 32 x 28 x 25, 50 x 32 x 14 and 94 x 94 x 112 parts respectively. This does not prove identical interior geometry or exact source provenance. Header MIN/MAX bounds include non-model paths and cannot establish part size. **The stand file does not match the 34 mm stand.**
+These are extruding `WALL-OUTER` paths after layer markers, excluding purge, brim and travel. With roughly 0.4 mm outer lines, they are consistent with 34 x 28 x 25, 50 x 32 x 14 and 94 x 94 x 112 parts respectively. This does not prove identical interior geometry or exact source provenance. Header MIN/MAX bounds include non-model paths and cannot establish part size. The current stand file maps dimensionally to the 34 mm stand. The 32 mm STL remains supported but has no current G-code.
+
+The replacement stand header estimates 1079.63 s and 1.24335 m filament (previously 1067.81 s and 1.20646 m). The cradle estimates 1070.81 s (previously 1070.86 s) and retains 2.45646 m filament. Stand acceleration commands vary with the new paths; cradle control-command inventory is unchanged. Outer-wall spans and final wall Z for the cradle and unchanged cover remain as tabulated. Stand/cradle layer counts remain 125/70. Cradle header MAXZ 20.101 includes non-model motion; final extruding outer-wall Z is 14 mm.
 
 ## Profile and command inspection
 

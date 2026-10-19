@@ -2,7 +2,7 @@
 
 ## Choose and slice
 
-Prefer the 34 mm stand for dual-port edge alignment. The supported 32 mm stand matches the approximate size of the supplied stand G-code. Its edge against a 44 mm body yields a 6 mm center offset, not the required 5 mm: measure its lateral position instead.
+Prefer the 34 mm stand for dual-port edge alignment. The supported 32 mm stand has no current G-code; re-slice its STL. Its edge against a 44 mm body yields a 6 mm center offset, not the required 5 mm: measure its lateral position instead.
 
 Slice at 100% scale in millimetres. PETG, a 0.4 mm nozzle, 0.2 mm layers and a 5 mm brim are starting guidance, not validated manufacturing settings. Select temperatures and speeds for your actual material and machine. Dark filament does not establish optical opacity. Inspect layer previews for the seat, grooves, walls and cable route.
 
@@ -10,7 +10,7 @@ Slice at 100% scale in millimetres. PETG, a 0.4 mm nozzle, 0.2 mm layers and a 5
 - Cradle: flat base-down, retaining walls upward.
 - Hood: supplied STL is closed roof-down, open rim-up. Keep this orientation so the roof prints on the bed and walls/baffle grow upward. The supplied profile disables support; inspect your own slice.
 
-The original G-code has its own [actual profile values](../gcode/README.md). Re-slice the 34 mm STL; no supplied G-code matches it.
+The original G-code has its own [actual profile values](../gcode/README.md). The current `source_stand_34mm_edge_alignment#1` G-code is dimensionally consistent with the 34 mm STL. Re-slice the intended STL for your exact printer, firmware and material; exact source slicing is not established.
 
 ## Source and leads
 

@@ -1,8 +1,8 @@
 # Quantyra optical fixture system
 
-Editable OpenSCAD, exact supplied STL meshes and original machine-specific G-code for a light-source stand, dual V11 photodiode-jig cradle and independent lift-off ambient-light hood. Packaging **v1.0.0**; all dimensions in millimetres.
+Editable OpenSCAD, exact supplied STL meshes and original machine-specific G-code for a light-source stand, dual V11 photodiode-jig cradle and independent lift-off ambient-light hood. Packaging **v1.0.1**; all dimensions in millimetres.
 
-Start with the [print and assembly guide](docs/print-and-assembly.md). Prefer the **34 mm stand** for visual edge registration to either port of the fixed dual jig body. The **32 mm stand** is a supported narrow option, dimensionally consistent with the supplied stand G-code; it needs measured lateral alignment.
+Start with the [print and assembly guide](docs/print-and-assembly.md). Prefer the **34 mm stand** for visual edge registration to either port of the fixed dual jig body. The **32 mm stand** is a supported narrow option with no current G-code; re-slice its STL and measure lateral alignment.
 
 | Printable part | Editable source / selector | Exact supplied mesh | Dimensions / print orientation |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ Only those selectors produce printable parts. Stand selectors `assembly`, `sourc
 
 ![Hood cutaway with illustrative hardware](previews/cutaway.png)
 
-[G-code notes](gcode/README.md) and the [profile/hash manifest](gcode/manifest.json) cover three original files. Exact source slicing is **not established**. Supplied stand G-code has a 32 mm footprint and does not match the preferred 34 mm stand. Prefer re-slicing your intended STL for your exact printer, firmware and material.
+[G-code notes](gcode/README.md) and the [profile/hash manifest](gcode/manifest.json) cover three original files. Exact source slicing is **not established**. The current stand G-code is dimensionally consistent with the preferred 34 mm stand; the 32 mm STL remains supported without current G-code. Prefer re-slicing your intended STL for your exact printer, firmware and material.
 
 The cradle targets the **dual V11 fixed body**; single-port compatibility is unverified. Obtain the jig, shutter, drawer, circuit and separately AGPL-licensed Arduino code from [Quantyra photodiode-jig](https://github.com/Quantyra/photodiode-jig).
 
@@ -29,6 +29,6 @@ Hardware/source, meshes, G-code and documentation use [CERN-OHL-S-2.0](LICENSE).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23484827.svg)](https://doi.org/10.5281/zenodo.23484827)
 
-Concept DOI (all versions): [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827). Exact v1.0.0 version DOI: [10.5281/zenodo.23484828](https://doi.org/10.5281/zenodo.23484828).
+Concept DOI (all versions): [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827). Cite this concept DOI pending the v1.0.1 archive and version DOI.
 
-The published v1.0.0 archive records commit `c1791c40d3bec0fbfbd1254e00c7e513e18fa512`. This metadata-only update on main adds the published citation identifiers; the v1.0.0 tag and archive remain unchanged.
+Packaging v1.0.1 replaces the stand and cradle G-code with original supplied replacements; the cover is unchanged. The historical v1.0.0 tag and archive remain unchanged.

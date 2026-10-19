@@ -1,5 +1,5 @@
 {
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "source_location": "https://github.com/Quantyra/optical-fixture-system",
   "scope": "All package files except this manifest and SHA256SUMS; SHA256SUMS also covers this manifest.",
   "files": [
@@ -11,12 +11,12 @@
     {
       "path": ".zenodo.json",
       "bytes": 639,
-      "sha256": "ae86bcd34d005d5984fac6b1f64b17e0ea659a8fc8a4da9f6bf31298fb5e09b6"
+      "sha256": "d0773e01335b3b4040d56ad46e9a8e703ab47a80642d6a8b6375659c766bba92"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 790,
-      "sha256": "434e01033a528419fd74c79a9b04aa446694effef9e673ce5b2c9542b917820a"
+      "bytes": 759,
+      "sha256": "b35203a497ba36d9df699b91cb15eb16f1260bfcfae657efc033d7063ed8e955"
     },
     {
       "path": "LICENSE",
@@ -25,8 +25,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3944,
-      "sha256": "cc3f0f1eed90577c0e51a971cfc4d5ab49b1e27b2984174b685f487b7b276e9a"
+      "bytes": 3907,
+      "sha256": "ffd7a4063099d2713c2fc24e58133600133f0263abe115a2fd2acbe401253a8c"
     },
     {
       "path": "cad/ambient_cover.scad",
@@ -50,13 +50,13 @@
     },
     {
       "path": "docs/print-and-assembly.md",
-      "bytes": 4700,
-      "sha256": "5a336f33c71f6bf0dde59e02bc00455e32b06f62d2c9343910900bbf8b00662c"
+      "bytes": 4845,
+      "sha256": "6b7eca28860cc426b25649a1ecffbcd1d5aaf8db1227ef0c6cf12d0c0470874d"
     },
     {
       "path": "gcode/README.md",
-      "bytes": 3637,
-      "sha256": "03c1543b32669549f16d924b38907481e74faf28c76cc5c647f6517b4b8d182c"
+      "bytes": 4224,
+      "sha256": "35db5fdb2f195188f0fc2e8e89576858f72bf5f466c3107ac757308aa1578dbe"
     },
     {
       "path": "gcode/ambient_cover_110mm_roof_down-Ender-3 V3 KE_0.4_CR-PETG_3h41m.gcode",
@@ -65,18 +65,18 @@
     },
     {
       "path": "gcode/detector_cradle-Ender-3 V3 KE_0.4_CR-PETG_17m.gcode",
-      "bytes": 573855,
-      "sha256": "205375abd3c420ee9345b8daa826a1f1a7e655e8c744776308819ed411aef8b4"
+      "bytes": 573767,
+      "sha256": "2c642c5dd8d2e4827b660e1a000334f8152b60cbfca9f1fa4403864ade006d16"
     },
     {
       "path": "gcode/manifest.json",
-      "bytes": 21029,
-      "sha256": "c8365e74796417425f2eff2a0917238a8947d5c64dddc324f4a64c69bbc8fc06"
+      "bytes": 21027,
+      "sha256": "8575b1d7246043a726247571ca8214bd7b3222ebb50ae296f4d1e30c3a4d1bc8"
     },
     {
-      "path": "gcode/source_stand_direct_wall_base_grooves-Ender-3 V3 KE_0.4_CR-PETG_17m.gcode",
-      "bytes": 614860,
-      "sha256": "cc81d0ea12885cd796ca52656f0f472181ada9b393ad1df632d86d89892d7124"
+      "path": "gcode/source_stand_34mm_edge_alignment#1-Ender-3 V3 KE_0.4_CR-PETG_17m.gcode",
+      "bytes": 620434,
+      "sha256": "ed60a4e61b50e42864e818d9c5cd59471e8e768301e20259f91c5016c6145dab"
     },
     {
       "path": "previews/cutaway.png",
@@ -95,8 +95,8 @@
     },
     {
       "path": "scripts/validate_release.py",
-      "bytes": 3151,
-      "sha256": "90446aa6f34729d0da0f3f19d4dd80bf743244a5cf62d165f90cb8c44fda89be"
+      "bytes": 3682,
+      "sha256": "af50e3de6af40004cfa903fdc574e88d1d422af5ce1efa79b55206004ff48d74"
     },
     {
       "path": "stl/ambient_cover_110mm_roof_down.stl",

@@ -55,11 +55,19 @@ def main():
         assert p.stat().st_size == entry['bytes']
         assert hashlib.sha256(p.read_bytes()).hexdigest() == entry['sha256']
     z = json.loads((ROOT/'.zenodo.json').read_text())
-    assert z['version'] == 'v1.0.0' and z['license'] == 'cern-ohl-s-2.0'
+    assert z['version'] == manifest['version'], 'Package/Zenodo version mismatch'
+    assert z['license'] == 'cern-ohl-s-2.0'
     assert z['creators'] and 'doi' not in z
     cff = (ROOT/'CITATION.cff').read_text()
     assert 'cff-version: 1.2.0' in cff and 'CERN-OHL-S-2.0' in cff
-    for entry in json.loads((ROOT/'gcode/manifest.json').read_text())['files']:
+    gcode_manifest = json.loads((ROOT/'gcode/manifest.json').read_text())
+    assert gcode_manifest['version'] == manifest['version'], 'G-code version mismatch'
+    assert re.search(r'^version: [\"\']?' + re.escape(manifest['version']) + r'[\"\']?$',
+                     cff, re.MULTILINE), 'CFF version mismatch'
+    assert {e['path'] for e in manifest['files']} == actual - {'manifest.json'}
+    assert {e['filename'] for e in gcode_manifest['files']} == {
+        p.name for p in (ROOT/'gcode').glob('*.gcode')}
+    for entry in gcode_manifest['files']:
         p = ROOT/'gcode'/entry['filename']
         assert p.stat().st_size == entry['bytes']
         assert hashlib.sha256(p.read_bytes()).hexdigest() == entry['sha256']
