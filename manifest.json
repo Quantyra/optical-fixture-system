@@ -5,8 +5,8 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 118,
-      "sha256": "b034985a49bad41391bd2bfc987dd7bd6b4c70e8f522bbf8497eca5859440ccb"
+      "bytes": 125,
+      "sha256": "6fbef98272e513fa211280255de746e3082af8656fb4d37177f70d61f60dac4f"
     },
     {
       "path": ".zenodo.json",
