@@ -1,0 +1,10 @@
+{
+  "title": "Quantyra optical fixture system",
+  "upload_type": "dataset",
+  "version": "v1.0.0",
+  "creators": [{"name": "Fredriksen, Daniel Eric", "affiliation": "Quantyra"}],
+  "publication_date": "2026-10-19",
+  "access_right": "open",
+  "license": "cern-ohl-s-2.0",
+  "description": "Fixed light-source stands (34 mm preferred edge-alignment and 32 mm narrow option), dual V11 photodiode-jig cradle and independent lift-off hood. Editable OpenSCAD, exact supplied STLs, original machine-specific G-code and documentation under CERN-OHL-S-2.0. Packaging v1.0.0. Exact source slicing and physical commissioning are not established."
+}
