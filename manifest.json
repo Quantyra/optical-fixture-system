@@ -15,8 +15,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 759,
-      "sha256": "b35203a497ba36d9df699b91cb15eb16f1260bfcfae657efc033d7063ed8e955"
+      "bytes": 790,
+      "sha256": "3a59f9ccc0f5eb7867e1dcc4fa50b7ed1924aa1928b01ebbfecf61819505a8ed"
     },
     {
       "path": "LICENSE",
@@ -25,8 +25,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3907,
-      "sha256": "ffd7a4063099d2713c2fc24e58133600133f0263abe115a2fd2acbe401253a8c"
+      "bytes": 3986,
+      "sha256": "284dcd3bdf0ca65fe2be9eba8b5cd2f8a6bbb76915f8e3da70b8635ffb80f8d9"
     },
     {
       "path": "cad/ambient_cover.scad",

@@ -29,6 +29,6 @@ Hardware/source, meshes, G-code and documentation use [CERN-OHL-S-2.0](LICENSE).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23484827.svg)](https://doi.org/10.5281/zenodo.23484827)
 
-Concept DOI (all versions): [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827). Cite this concept DOI pending the v1.0.1 archive and version DOI.
+Version DOI (v1.0.1): [10.5281/zenodo.23485390](https://doi.org/10.5281/zenodo.23485390), [Zenodo archive](https://zenodo.org/records/23485390). Concept DOI (all versions): [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827).
 
 Packaging v1.0.1 replaces the stand and cradle G-code with original supplied replacements; the cover is unchanged. The historical v1.0.0 tag and archive remain unchanged.
