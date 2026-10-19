@@ -3,6 +3,7 @@ message: "Please cite this package and identify the exact public commit, stand s
 title: "Quantyra optical fixture system"
 type: dataset
 version: "v1.0.0"
+doi: "10.5281/zenodo.23484828"
 date-released: 2026-10-19
 authors:
   - family-names: "Fredriksen"

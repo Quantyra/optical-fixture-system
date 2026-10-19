@@ -23,4 +23,12 @@ The user reports that the hood seems to print well after correcting the material
 
 Hardware/source, meshes, G-code and documentation use [CERN-OHL-S-2.0](LICENSE). Source Location: https://github.com/Quantyra/optical-fixture-system. Read the [plain-language license guide](docs/licensing.md). Open-source questions: info@quantyra.org. Separate non-copyleft commercial terms: info@qxcellerate.com.
 
-[File manifest](manifest.json), [SHA-256 checksums](SHA256SUMS), [CITATION.cff](CITATION.cff) and [.zenodo.json](.zenodo.json) identify this package. No DOI is assigned here. Run `python scripts/validate_release.py` for integrity, basic mesh and metadata checks. Cite the version, exact public commit, stand size and paths used.
+[File manifest](manifest.json), [SHA-256 checksums](SHA256SUMS), [CITATION.cff](CITATION.cff) and [.zenodo.json](.zenodo.json) identify this package. Run `python scripts/validate_release.py` for integrity, basic mesh and metadata checks. Cite the version, exact public commit, stand size and paths used.
+
+## Citation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23484827.svg)](https://doi.org/10.5281/zenodo.23484827)
+
+Concept DOI (all versions): [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827). Exact v1.0.0 version DOI: [10.5281/zenodo.23484828](https://doi.org/10.5281/zenodo.23484828).
+
+The published v1.0.0 archive records commit `c1791c40d3bec0fbfbd1254e00c7e513e18fa512`. This metadata-only update on main adds the published citation identifiers; the v1.0.0 tag and archive remain unchanged.
