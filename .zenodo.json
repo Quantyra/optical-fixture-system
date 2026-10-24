@@ -11,12 +11,17 @@
   "publication_date": "2026-10-23",
   "access_right": "open",
   "license": "cern-ohl-s-2.0",
-  "description": "Keyed light-source stand and cradle for the unchanged dual V11 photodiode jig, with preserved legacy stands, cradle and lift-off hood. Editable OpenSCAD, exact STL meshes and documentation under CERN-OHL-S-2.0. Patent pending. New version DOI pending publication. Source Location: https://github.com/Quantyra/optical-fixture-system.",
+  "description": "Keyed light-source stand and cradle for the unchanged dual V11 photodiode jig, with preserved legacy stands, cradle and lift-off hood. Editable OpenSCAD, exact STL meshes and documentation under CERN-OHL-S-2.0. Patent pending. v1.1.0 archived as DOI 10.5281/zenodo.23609466; subsequent metadata corrections preserve the original tagged archive. Source Location: https://github.com/Quantyra/optical-fixture-system.",
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.23484827",
       "relation": "isVersionOf",
       "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/Quantyra/optical-fixture-system/tree/v1.1.0",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     }
   ]
 }

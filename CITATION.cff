@@ -1,8 +1,9 @@
 cff-version: 1.2.0
-message: "Please cite the version and exact public files used. New version DOI pending publication."
+message: "Please cite the version and exact public files used. Use the v1.1.0 version DOI for this release."
 title: "Quantyra optical fixture system"
 type: dataset
 version: "v1.1.0"
+doi: "10.5281/zenodo.23609466"
 date-released: 2026-10-23
 authors:
   - family-names: "Fredriksen"
@@ -15,4 +16,4 @@ abstract: "Keyed light-source stand and cradle for the unchanged dual V11 photod
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23484827"
-    description: "Concept DOI for all fixture versions; v1.1.0 version DOI pending."
+    description: "Concept DOI for all fixture versions."

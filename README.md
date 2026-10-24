@@ -21,4 +21,6 @@ Hardware/source, meshes, G-code and documentation use [CERN-OHL-S-2.0](LICENSE).
 
 Run `python scripts/validate_release.py` for focused offline integrity, privacy, local-link, metadata and mesh checks. [Manifest](manifest.json), [SHA-256 checksums](SHA256SUMS), [citation](CITATION.cff), [Zenodo metadata](.zenodo.json).
 
-Concept DOI: [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827). **v1.1.0 version DOI pending publication**. Historical v1.0.1: [10.5281/zenodo.23485390](https://doi.org/10.5281/zenodo.23485390). Previous tags and archives are unchanged.
+Concept DOI: [10.5281/zenodo.23484827](https://doi.org/10.5281/zenodo.23484827). [v1.1.0 version DOI: 10.5281/zenodo.23609466](https://doi.org/10.5281/zenodo.23609466). Historical v1.0.1: [10.5281/zenodo.23485390](https://doi.org/10.5281/zenodo.23485390). Previous tags and archives are unchanged.
+
+The [v1.1.0 release](https://github.com/Quantyra/optical-fixture-system/releases/tag/v1.1.0) archives [source commit `81a1d395f9451685a1b03fb4f69ab38a8cefc0d1`](https://github.com/Quantyra/optical-fixture-system/tree/81a1d395f9451685a1b03fb4f69ab38a8cefc0d1). Its [Zenodo archive](https://zenodo.org/records/23609466) was verified against all 35 archived files. Subsequent citation/metadata corrections do not change that tagged archive.
