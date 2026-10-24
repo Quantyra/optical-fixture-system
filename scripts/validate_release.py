@@ -1,4 +1,7 @@
-"""Offline package integrity and basic mesh checks; Python standard library only."""
+"""Offline integrity, metadata, privacy, local links and basic mesh checks.
+Python standard library only. Does not execute CAD, G-code or machine commands.
+SPDX-License-Identifier: CERN-OHL-S-2.0
+"""
 from pathlib import Path
 import hashlib
 import json
@@ -60,19 +63,65 @@ def main():
     assert z['creators'] and 'doi' not in z
     cff = (ROOT/'CITATION.cff').read_text()
     assert 'cff-version: 1.2.0' in cff and 'CERN-OHL-S-2.0' in cff
-    gcode_manifest = json.loads((ROOT/'gcode/manifest.json').read_text())
-    assert gcode_manifest['version'] == manifest['version'], 'G-code version mismatch'
     assert re.search(r'^version: [\"\']?' + re.escape(manifest['version']) + r'[\"\']?$',
                      cff, re.MULTILINE), 'CFF version mismatch'
     assert {e['path'] for e in manifest['files']} == actual - {'manifest.json'}
-    assert {e['filename'] for e in gcode_manifest['files']} == {
-        p.name for p in (ROOT/'gcode').glob('*.gcode')}
-    for entry in gcode_manifest['files']:
-        p = ROOT/'gcode'/entry['filename']
-        assert p.stat().st_size == entry['bytes']
-        assert hashlib.sha256(p.read_bytes()).hexdigest() == entry['sha256']
-        assert (ROOT/entry['modeled_counterpart']).is_file()
+    assert 'Daniel Eric' in cff and 'Quantyra' in cff
+    assert z['creators'] == [{'name': 'Fredriksen, Daniel Eric', 'affiliation': 'Quantyra'}]
+    assert manifest['source_location'] in cff
+    if (ROOT/'gcode').exists():
+        gcode_manifest = json.loads((ROOT/'gcode/manifest.json').read_text())
+        assert gcode_manifest['version'] == manifest['version'], 'G-code version mismatch'
+        assert {e['filename'] for e in gcode_manifest['files']} == {
+            p.name for p in (ROOT/'gcode').glob('*.gcode')}
+        for entry in gcode_manifest['files']:
+            p = ROOT/'gcode'/entry['filename']
+            assert p.stat().st_size == entry['bytes']
+            assert hashlib.sha256(p.read_bytes()).hexdigest() == entry['sha256']
+            assert (ROOT/entry['modeled_counterpart']).is_file()
+        assert not any('29m' in e['filename'] for e in gcode_manifest['files'])
+    else:
+        assert not list(ROOT.rglob('*.gcode'))
+        assert not re.search(r'^doi:', cff, re.MULTILINE)
+        assert not z.get('doi') and not z.get('prereserve_doi')
+    text_suffixes = {'.md', '.json', '.cff', '.scad', '.py', '.gcode'}
+    for name in sorted(actual):
+        p = ROOT/name
+        if p.suffix not in text_suffixes:
+            continue
+        data = p.read_text(encoding='utf-8')
+        assert not re.search(r'(?im)^//\s*PRIVATE\b', data), f'Private CAD header: {name}'
+        assert not re.search(r'(?<![A-Za-z])[A-Za-z]:[\\/]', data), f'Local drive path: {name}'
+        if p.suffix == '.scad':
+            assert 'qa_' not in data, f'QA selector: {name}'
+            for ref in re.findall(r'(?:use|include)\s*<([^>]+)>', data):
+                dependency = (p.parent/ref).resolve()
+                assert dependency.is_relative_to(ROOT) and dependency.is_file(), ref
+        if p.suffix == '.md':
+            for ref in re.findall(r'\]\(([^)]+)\)', data):
+                if re.match(r'^(?:https?://|mailto:|#)', ref):
+                    continue
+                target = (p.parent/ref.split('#')[0]).resolve()
+                assert target.is_relative_to(ROOT) and target.is_file(), (name, ref)
+    geometry = json.loads((ROOT/'docs/geometry-checks.json').read_text())
+    assert geometry['status'] == 'PASS_GEOMETRY_ONLY'
+    for entry in geometry['approved_mesh_exports']:
+        p = ROOT/entry['mesh']
+        if p.exists():
+            assert hashlib.sha256(p.read_bytes()).hexdigest() == entry['sha256']
+        assert entry['regenerated_symmetric_difference_mm3'] < 1e-5
+    for entry in geometry['interfaces']:
+        assert entry['docked_overlap_mm3'] < 1e-4
+        assert max(entry['two_tongue_7_2mm_straight_withdrawal_sweep_overlap_mm3']) < 1e-4
     meshes = {p.name: mesh_info(p) for p in sorted((ROOT/'stl').glob('*.stl'))}
+    for entry in geometry['approved_mesh_exports']:
+        name = Path(entry['mesh']).name
+        if name in meshes:
+            info = meshes[name]
+            assert abs(info['signed_volume_mm3'] - entry['volume_mm3']) < 1e-4
+            # Export evidence uses [minimum_xyz, maximum_xyz]; mesh_info is per axis.
+            assert all(abs(info['bounds_mm'][axis][side] - entry['bounds_mm'][side][axis]) < 1e-5
+                       for axis in range(3) for side in range(2))
     print(json.dumps(dict(status='PASS',checked_files=len(listed),meshes=meshes), indent=2))
 
 

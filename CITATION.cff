@@ -1,10 +1,9 @@
 cff-version: 1.2.0
-message: "Please cite this package and identify the exact public commit, stand size and file paths used."
+message: "Please cite the version and exact public files used. New version DOI pending publication."
 title: "Quantyra optical fixture system"
 type: dataset
-version: "v1.0.1"
-doi: "10.5281/zenodo.23485390"
-date-released: 2026-10-19
+version: "v1.1.0"
+date-released: 2026-10-23
 authors:
   - family-names: "Fredriksen"
     given-names: "Daniel Eric"
@@ -12,8 +11,8 @@ authors:
 repository-code: "https://github.com/Quantyra/optical-fixture-system"
 url: "https://github.com/Quantyra/optical-fixture-system"
 license: CERN-OHL-S-2.0
-abstract: >-
-  Fixed light-source stands, dual V11 photodiode-jig cradle and independent
-  lift-off hood: editable OpenSCAD, exact STL meshes, original machine-specific
-  G-code and documentation. Packaging v1.0.1; physical commissioning and
-  exact source slicing remain unverified.
+abstract: "Keyed light-source stand and cradle for the unchanged dual V11 photodiode jig, with preserved legacy stands, cradle and lift-off hood. Editable OpenSCAD and exact approved STL meshes. Patent pending."
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23484827"
+    description: "Concept DOI for all fixture versions; v1.1.0 version DOI pending."

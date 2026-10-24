@@ -1,43 +1,22 @@
-# Print and assembly
+# Keyed pair: printing and assembly
 
-## Choose and slice
+![Actual CAD of the two current print parts](../previews/keyed_print_parts.png)
 
-Prefer the 34 mm stand for dual-port edge alignment. The supported 32 mm stand has no current G-code; re-slice its STL. Its edge against a 44 mm body yields a 6 mm center offset, not the required 5 mm: measure its lateral position instead.
+Use `source_stand_female.stl` with `detector_cradle_two_male_ports.stl`. This cradle carries the existing dual V11 jig; it is not a new detector holder. Use `cad/keyed_fixture.scad`, `part="stand"` or `part="cradle"` to export. `assembly`, `print`, `underside` and `detail` are illustrations, not extra print parts. All CAD imports resolve within this package.
 
-Slice at 100% scale in millimetres. PETG, a 0.4 mm nozzle, 0.2 mm layers and a 5 mm brim are starting guidance, not validated manufacturing settings. Select temperatures and speeds for your actual material and machine. Dark filament does not establish optical opacity. Inspect layer previews for the seat, grooves, walls and cable route.
+Print both flat, sole/foot down. Re-slice the exact STLs for your printer and material; inspect layers, dovetail flanks, tongue roots, pocket mouths and roof bridges. Avoid supports trapped in the sole-open pockets. Check the 8 mm relief bridges and 3 mm stand roof in the slicer. Keep the whole sole flat; remove debris without altering the datums. Fit gently before mounting hardware. Do not force or use thin tongues as handles. Reject warped, cracked or rocking parts.
 
-- Stand: broad foot-down, upright vertical.
-- Cradle: flat base-down, retaining walls upward.
-- Hood: supplied STL is closed roof-down, open rim-up. Keep this orientation so the roof prints on the bed and walls/baffle grow upward. The supplied profile disables support; inspect your own slice.
+The revised front apron is 5 mm thick; pocket ceiling Z=2 mm, male tongue height 1.4 mm, stand roof 3 mm. Seated roof gap is 0.6 mm and horizontal side clearance is 0.25 mm per flank. The source seat and nominal optical axis height Z=20 mm are preserved. The 0.6 mm roof gap is not free lift: in the ideal centered straight section, sloped flanks govern about 0.35 mm relative lift, with `abs(dx) + lift/1.4 <= 0.25` before flank contact. Tilt, yaw, printed tolerances and partially withdrawn tips require separate checks. This is a clearance joint without latch, clamp or preload.
 
-The original G-code has its own [actual profile values](../gcode/README.md). The current `source_stand_34mm_edge_alignment#1` G-code is dimensionally consistent with the 34 mm STL. Re-slice the intended STL for your exact printer, firmware and material; exact source slicing is not established.
+1. Keep the cradle fixed on a firm flat bench. Install the unchanged V11 jig using its original instructions; leave source lead slack.
+2. Looking **from source toward detector**, L is world X=-5 mm and R is X=+5 mm. These are positions, not electrical polarity. Align the stand's central captured socket with the selected cradle tongue; the corresponding loose outer relief clears the unused tongue.
+3. Keep both soles flat and slide the stand toward the jig (+Y) until broad stop faces seat squarely. Check seating, rocking and lead clearance by hand.
+4. To switch ports, brace the cradle, withdraw the stand **7.2 mm straight toward the source (-Y)**, move **10 mm laterally**, then reinsert. Do not move sideways while engaged or lift to switch.
 
-## Source and leads
+The operator printed the revised stand and confirms stand/jig fit. No measured repeatability, precision or optical result is established. Check real source/detector positions and alignment at the bench; proxy previews cannot certify them.
 
-Measure the actual body, flange, lead diameter/pitch, straight lead allowance and terminal hardware before assembly. Nominal CAD values are a 3.4 mm bore, 4.4 mm rear-loading recess, 1.4 mm seat land, 2.54 mm lead pitch, 1.3 mm independent grooves and 0.8 mm groove depth. These are design values, not measured hardware dimensions.
+For added distance use the separately packaged [optical path spacers](https://github.com/Quantyra/optical-path-spacers). CAD compatibility passed with this stand; physical extension fit is untested. The original lift-off hood collides with the extended rig. Use independent ambient control, such as a suitably sized opaque enclosure around the entire supported rig, with clearances for travel and leads. Check mechanical clearance and measure dark/background response before use; no enclosure fit or light-leak performance is promised. For the direct keyed pair, check the retained hood's clearance and full withdrawal travel independently as well.
 
-Load the flange from the rear against the recessed seat. The lead paths have open entry into the recess and independent wall-to-base grooves. Their CAD junction is square. Illustrative conductors use relaxed bends; they are neither forming tools nor hardware bend-radius specifications. Support each lead away from the package seal while forming it gently, preserving the straight length required by the actual device. Do not pull the seal, force the flange or assume proxy polarity. Use insulated terminals and strain relief; keep exposed conductors apart. Stop if measured hardware cannot fit without force.
+Original machine-specific G-code is supplied as provenance, not a portable print recipe. Inspect [G-code notes](../gcode/README.md). No G-code was executed for this release.
 
-![Seat and open lead entry; hardware dimensions are illustrative](../previews/source_entry_preview.png)
-
-## Seat and align the dual jig
-
-Follow the dual V11 jig's own guide in the linked repository. Rotate it into the cradle with **leads upward**. The modeled aperture height is 20 mm: 8 mm cradle floor plus 12 mm transformed aperture offset, matching the source axis. Body datum tabs have nominal clearance and do not clamp. Check seating and shutter/drawer corridors without forcing parts. Single-port compatibility is unverified.
-
-Butt the stand and cradle feet. In assembly coordinates source Y=-33 places its forward edge at cradle Y=-19. The resulting **18.2 mm lens gap is modeled using proxy hardware, not measured**. Measure actual spacing after assembly.
-
-The fixed dual body is 44 mm wide with 10 mm port pitch. A 34 mm stand centered at X=0 lies between ports. Align corresponding **left fixed-body and stand edges** for X=-5 mm; corresponding **right edges** give X=+5 mm. Reference the fixed body, not the 50 mm cradle or moving panels. Visual registration provides no detent, locking, exclusive illumination or repeatability guarantee. Confirm channel identity and alignment experimentally. After alignment, fix both feet to a rigid opaque support without distortion or obstructing panels/wires.
-
-![34 mm edge registration with fixed-body references; CAD proxies](../previews/edge_alignment_preview.png)
-
-## Independent hood
-
-Nominal clear space is 90 x 90 x 110 mm; outer size is 94 x 94 x 112 mm. The independent open-bottom hood lifts off and has an internal baffle with an offset cable exit. Its illustrative assembly offset is X=6, Y=-7 mm. Route wires around the baffle and through the exit without strain, pinching, sharp bends or exposed shorts.
-
-The provisional height budget is 38 + 10 + 40 = 88 mm, leaving 22 mm to the 110 mm ceiling. Measure actual terminals and relaxed wires; this is not verified clearance.
-
-**Lift the hood before shutter changes or full panel withdrawal. Keep hands outside while it is lowered.** It is not a clamp, handle or safety enclosure.
-
-## Bench commissioning
-
-Check dimensions, seating, lead strain, insulation, panel travel, optical heights and actual spacing. Check alignment with the hood lifted, then verify clearance while lowering it. Measure source-off baseline, each shutter state, ambient/seam/cable-exit leakage and repeat/removal behavior with your actual materials and source. No completed fit, light-exclusion, extinction, locking, exclusive illumination, opacity, repeatability or laser-safety certification is asserted. Assess the actual optical source and electrical setup before operation.
+For matching raised lettering, use OpenSCAD with Liberation Sans Bold available. The supplied exact STLs remain the print reference if another font environment changes text outlines. CAD export equality here was checked in the release build environment; no fonts or slicer are installed by the validator.

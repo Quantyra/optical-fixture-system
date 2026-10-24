@@ -1,7 +1,7 @@
 {
-  "version": "v1.0.1",
+  "version": "v1.1.0",
   "source_location": "https://github.com/Quantyra/optical-fixture-system",
-  "scope": "All package files except this manifest and SHA256SUMS; SHA256SUMS also covers this manifest.",
+  "scope": "All public package files except this manifest and SHA256SUMS; SHA256SUMS also covers this manifest. Local Git control files are excluded.",
   "files": [
     {
       "path": ".gitattributes",
@@ -10,23 +10,13 @@
     },
     {
       "path": ".zenodo.json",
-      "bytes": 639,
-      "sha256": "d0773e01335b3b4040d56ad46e9a8e703ab47a80642d6a8b6375659c766bba92"
+      "bytes": 798,
+      "sha256": "c250e12314b0fbcbeb8f40cf0fd936998f707196f4e826895177ef96138b0b26"
     },
     {
-      "path": "CITATION.cff",
-      "bytes": 790,
-      "sha256": "3a59f9ccc0f5eb7867e1dcc4fa50b7ed1924aa1928b01ebbfecf61819505a8ed"
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 13708,
-      "sha256": "1378410f52f977bc20cfa85054f6d2075f6b222de18492d14f63f9bd544e9f95"
-    },
-    {
-      "path": "README.md",
-      "bytes": 3986,
-      "sha256": "284dcd3bdf0ca65fe2be9eba8b5cd2f8a6bbb76915f8e3da70b8635ffb80f8d9"
+      "path": "ATTRIBUTION.md",
+      "bytes": 1343,
+      "sha256": "9100492a151f3efe8137fa35aa9b2d2ff2f29428c1f54bac9e7a76450f639c58"
     },
     {
       "path": "cad/ambient_cover.scad",
@@ -44,19 +34,34 @@
       "sha256": "1723c448b8f88492db62fc8c6d5088421eaae3b7b2d8d8b9609cc676d61139ce"
     },
     {
+      "path": "cad/keyed_fixture.scad",
+      "bytes": 5122,
+      "sha256": "f5374d2fe07eef00fcd4a845ae37289862ea57e691c64d5b1fca7d9f6b4d4064"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 831,
+      "sha256": "e684ca054b44d3f04cc2146f0694810606fbe473e48ff63036c0a77ae25ab9e5"
+    },
+    {
+      "path": "docs/geometry-checks.json",
+      "bytes": 7443,
+      "sha256": "df12582d799693a317a3fd5941bc422ebd1c8f14c79fbf9b559ddc944033425a"
+    },
+    {
+      "path": "docs/legacy-parts.md",
+      "bytes": 1301,
+      "sha256": "fdfe0056e752c29eec5ab44436344968ef8cf1a4101f4ba9438ad5db2536a338"
+    },
+    {
       "path": "docs/licensing.md",
       "bytes": 1141,
       "sha256": "1e9974ac2d72159fa180d012e5b02b279bebe197cb66917a1b2aad533d5c7ef0"
     },
     {
       "path": "docs/print-and-assembly.md",
-      "bytes": 4845,
-      "sha256": "6b7eca28860cc426b25649a1ecffbcd1d5aaf8db1227ef0c6cf12d0c0470874d"
-    },
-    {
-      "path": "gcode/README.md",
-      "bytes": 4224,
-      "sha256": "35db5fdb2f195188f0fc2e8e89576858f72bf5f466c3107ac757308aa1578dbe"
+      "bytes": 3657,
+      "sha256": "f12aa8fdc927e15d6bf3e56a9fb7f60f54ef21d977fcf865fe1d4468c477385f"
     },
     {
       "path": "gcode/ambient_cover_110mm_roof_down-Ender-3 V3 KE_0.4_CR-PETG_3h41m.gcode",
@@ -69,14 +74,34 @@
       "sha256": "2c642c5dd8d2e4827b660e1a000334f8152b60cbfca9f1fa4403864ade006d16"
     },
     {
+      "path": "gcode/detector_cradle_two_male_ports-Ender-3 V3 SE_0.4_CR-PETG_35m.gcode",
+      "bytes": 457461,
+      "sha256": "ba91a1a3b63b1f322fc06d3bd5d79a89f7f157f64ac98b006e6b7f44eca7fa14"
+    },
+    {
       "path": "gcode/manifest.json",
-      "bytes": 21027,
-      "sha256": "8575b1d7246043a726247571ca8214bd7b3222ebb50ae296f4d1e30c3a4d1bc8"
+      "bytes": 36295,
+      "sha256": "1d77ec671b1acb21fc371bdaaceff4fb5bbd6e64e246cf3f87d34a664ba844d9"
+    },
+    {
+      "path": "gcode/README.md",
+      "bytes": 2874,
+      "sha256": "df6acf335f5ee5c6309df08e049d230e5f306b2851ec333abdaaefd1e9511d0b"
     },
     {
       "path": "gcode/source_stand_34mm_edge_alignment#1-Ender-3 V3 KE_0.4_CR-PETG_17m.gcode",
       "bytes": 620434,
       "sha256": "ed60a4e61b50e42864e818d9c5cd59471e8e768301e20259f91c5016c6145dab"
+    },
+    {
+      "path": "gcode/source_stand_female_taller_socket_2026-10-23-Ender-3 V3 SE_0.4_CR-PETG_30m.gcode",
+      "bytes": 555946,
+      "sha256": "335704492774e32ff241cebd0a17af1a5648ab72f43a896746300421527500c5"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 13708,
+      "sha256": "1378410f52f977bc20cfa85054f6d2075f6b222de18492d14f63f9bd544e9f95"
     },
     {
       "path": "previews/cutaway.png",
@@ -89,14 +114,29 @@
       "sha256": "096bfbca01aa9cda4873b7d68f3363390266619ec524aaff863236d87a8b098e"
     },
     {
+      "path": "previews/keyed_assembly.png",
+      "bytes": 33669,
+      "sha256": "f470b58144ef939ade983507d45e7b227102ea222c28502934484aea80329dea"
+    },
+    {
+      "path": "previews/keyed_print_parts.png",
+      "bytes": 25179,
+      "sha256": "f21ad46cf8547d7652d70538ecfe6b4ff3d69ccb59d5ae82013020172ab74c5f"
+    },
+    {
       "path": "previews/source_entry_preview.png",
       "bytes": 68170,
       "sha256": "256599c2a8fbb402a94b39b831deff526f2a149ea471b7114a7edc9d46ce35a3"
     },
     {
+      "path": "README.md",
+      "bytes": 2856,
+      "sha256": "ecd5d800fa2121095c0c428a8f805edabcc8653177ebbdb6ca9d15726f167c5b"
+    },
+    {
       "path": "scripts/validate_release.py",
-      "bytes": 3682,
-      "sha256": "af50e3de6af40004cfa903fdc574e88d1d422af5ce1efa79b55206004ff48d74"
+      "bytes": 6417,
+      "sha256": "045c481db34d33216d727919b7d21d48990504a2050f86fa94394fe02024d55e"
     },
     {
       "path": "stl/ambient_cover_110mm_roof_down.stl",
@@ -109,6 +149,11 @@
       "sha256": "40f07ff757e8be15610e9c0b208be1142aaa4cd5d9af286e036f831fc576e8c4"
     },
     {
+      "path": "stl/detector_cradle_two_male_ports.stl",
+      "bytes": 56776,
+      "sha256": "945e964d289455c3f88225678260cbf0bba0d027f7fa1b0c983ecd53cb534010"
+    },
+    {
       "path": "stl/source_stand_32mm.stl",
       "bytes": 55579,
       "sha256": "3ae384e7ad310da21bb670548d58ecb1729d87b6840037d5b7d9863a3af92e73"
@@ -117,6 +162,11 @@
       "path": "stl/source_stand_34mm.stl",
       "bytes": 58101,
       "sha256": "c4353637a2a710fdd731a9e8f48ef82ebc9c6712ebaa416312afc0f162731569"
+    },
+    {
+      "path": "stl/source_stand_female.stl",
+      "bytes": 64525,
+      "sha256": "3fb30b959689880f5e5a2539ac5d6ca1e52c1d8f5bc1f5f725c9326d79a05fae"
     }
   ]
 }
